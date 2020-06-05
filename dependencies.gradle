@@ -1,0 +1,134 @@
+ext {
+
+    //Android Config
+    minSDK = 19
+    targetSDK = 29
+    compileSDK = 29
+
+    kotlinVersion = '1.3.72'
+
+    buildTools = '4.0.0'
+
+    appCompatVersion = '1.1.0'
+
+    multidexVersion = '2.0.1'
+
+    AndroidArchVersion = '1.1.1'
+    databindingVersion = '3.1.4'
+    lifeCycleVersion = '2.0.0'
+    ktxVersion = '1.1.0'
+
+    constraintVersion = '1.1.3'
+    cardViewVersion = '1.0.0'
+    recyclerViewVersion = '1.0.0'
+    materialVersion = '1.0.0'
+
+    //Google Android
+    playServicesMapsVersion = '17.0.0'
+    placesVersion = '2.1.0'
+    androidMapsUtilsVersion = '0.5'
+    playServicesPlacesVersion = '17.0.0'
+
+    //Rx
+    rxJavaVersion = '2.2.10'
+    rxKotlinVersion = '2.2.0'
+    rxAndroidVersion = '2.1.1'
+
+    //Koin
+    koinVersion = '2.0.1'
+
+    //Retrofit
+    retrofitVersion = '2.5.0'
+
+    //OkHTTP
+    okhttpVersion = '3.12.1'
+    loggingInterceptorVersion = '3.10.0'
+
+    //Gson
+    gsonVersion = '2.8.5'
+
+    //Room version
+    roomVersion = '2.2.2'
+
+    //Navigation
+    navigationVersion = "2.2.0-rc02"
+
+    //Test
+    junitVersion = '4.12'
+    espressoVersion = '3.2.0'
+    runnerVersion = '1.1.1'
+
+    spekVersion = '2.0.8'
+
+    jUnitRunnerVersion = '1.6.0-M1'
+    jupiterVersion = '5.3.2'
+    mockitoKotlinVersion = '2.2.0' // https://github.com/nhaarman/mockito-kotlin/releases
+    mockkVersion = '1.9.3'
+    mockwebserverVersion = '4.1.0'
+    androidArchCoreTestingVersion = '1.1.1'
+
+    dependencies = [
+            kotlin               : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+
+            multidex             : "androidx.multidex:multidex:$multidexVersion",
+
+            appCompat            : "androidx.appcompat:appcompat:$appCompatVersion",
+            constraintlayout     : "androidx.constraintlayout:constraintlayout:$constraintVersion",
+            cardView             : "androidx.cardview:cardview:$cardViewVersion",
+            recyclerView         : "androidx.recyclerview:recyclerview:$recyclerViewVersion",
+            material             : "com.google.android.material:material:$materialVersion",
+
+            viewModel            : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifeCycleVersion",
+            lifeCycle            : "android.arch.lifecycle:extensions:$AndroidArchVersion",
+
+            dataBinding          : "com.android.databinding:compiler:$databindingVersion",
+
+            ktx                  : "androidx.core:core-ktx:$ktxVersion",
+
+            rxJava               : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
+            rxKotlin             : "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion",
+            rxAndroid            : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
+
+            koin                 : "org.koin:koin-android:$koinVersion",
+            koinViewModel        : "org.koin:koin-androidx-viewmodel:$koinVersion",
+
+            retrofit             : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            retrofitRxAdapter    : "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
+            retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+            gson                 : "com.google.code.gson:gson:$gsonVersion",
+
+            okhttp               : "com.squareup.okhttp3:okhttp:$okhttpVersion",
+            loggingInterceptor   : "com.squareup.okhttp3:logging-interceptor:$loggingInterceptorVersion",
+
+            room                 : "androidx.room:room-runtime:$roomVersion",
+            roomRxJava           : "androidx.room:room-rxjava2:$roomVersion",
+            roomCompiler         : "androidx.room:room-compiler:$roomVersion",
+            roomKotlinExtensions : "androidx.room:room-ktx:$roomVersion",
+
+            kotlinReflect        : "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion",
+
+            playServicesMaps     : "com.google.android.gms:play-services-maps:$playServicesMapsVersion",
+            places               : "com.google.android.libraries.places:places:$placesVersion",
+            androidMapsUtils     : "com.google.maps.android:android-maps-utils:$androidMapsUtilsVersion",
+            playServicesPlaces   : "com.google.android.gms:play-services-places:$playServicesPlacesVersion",
+
+            navigationFragment   : "androidx.navigation:navigation-fragment-ktx:$navigationVersion",
+            navigationUi         : "androidx.navigation:navigation-ui-ktx:$navigationVersion",
+    ]
+
+    testDependecies = [
+            junit                 : "junit:junit:$junitVersion",
+            espresso              : "androidx.test.espresso:espresso-core:$espressoVersion",
+            runner                : "androidx.test:runner:$runnerVersion",
+            spekDsl               : "org.spekframework.spek2:spek-dsl-jvm:$spekVersion",
+            spekJunit             : "org.spekframework.spek2:spek-runner-junit5:$spekVersion",
+            junitPlatformRunner   : "org.junit.platform:junit-platform-runner:$jUnitRunnerVersion", // for using Spek with JUnit4
+            jupiter               : "org.junit.jupiter:junit-jupiter-api:$jupiterVersion", // for using Spek with JUnit4
+            kotlinJUnit           : "org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion",
+            mockitoKotlin         : "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion",
+            koinTest              : "org.koin:koin-test:$koinVersion",
+            mockk                 : "io.mockk:mockk:$mockkVersion",
+            mockwebserver         : "com.squareup.okhttp3:mockwebserver:$mockwebserverVersion",
+            androidArchCoreTesting: "android.arch.core:core-testing:$androidArchCoreTestingVersion",
+    ]
+}

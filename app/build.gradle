@@ -1,0 +1,95 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+android {
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion globalConfiguration["compileSDK"]
+
+    defaultConfig {
+        applicationId "com.pabloteigon.warren"
+        minSdkVersion globalConfiguration["minSDK"]
+        targetSdkVersion globalConfiguration["targetSDK"]
+        versionCode 100
+        versionName "1.0.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        vectorDrawables.generatedDensities = ['ldpi', 'hdpi', 'mdpi', 'xhdpi', 'xxhdpi', 'xxxhdpi']
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            resValue "string", "app_name", "Warren"
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            resValue "string", "app_name", "Warren - Debug"
+            applicationIdSuffix '.debug'
+        }
+    }
+
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+}
+
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation project(path: ':domain')
+    implementation project(path: ':data')
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    def dependencies = rootProject.ext.dependencies
+    def testDependecies = rootProject.ext.testDependecies
+
+    implementation dependencies.multidex
+    implementation dependencies.appCompat
+    implementation dependencies.constraintlayout
+    implementation dependencies.material
+    implementation dependencies.kotlinReflect
+
+    //Koin
+    implementation dependencies.koin
+    implementation dependencies.koinViewModel
+
+    //RX
+    implementation dependencies.rxJava
+    implementation dependencies.rxKotlin
+    implementation dependencies.rxAndroid
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    //Navigation
+    implementation dependencies.navigationFragment
+    implementation dependencies.navigationUi
+
+    //Test
+    testImplementation dependencies.retrofit
+    testImplementation dependencies.gson
+    testImplementation dependencies.retrofitRxAdapter
+    testImplementation dependencies.retrofitGsonConverter
+    testImplementation testDependecies.koinTest
+    testImplementation testDependecies.mockk
+    testImplementation testDependecies.mockwebserver
+    testImplementation testDependecies.androidArchCoreTesting
+
+}
