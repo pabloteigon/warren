@@ -1,0 +1,2 @@
+rootProject.name='warren'
+include ':app', ':domain', ':data'
